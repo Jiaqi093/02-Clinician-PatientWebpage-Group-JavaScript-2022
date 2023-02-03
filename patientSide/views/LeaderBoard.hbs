@@ -1,0 +1,254 @@
+<div class = "top_buttons">
+        <div class = "top_buttons_sidebar">
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav();toggle();">&times;</a>
+                <a><span class="iconify" data-icon="gg:profile" style="color: black;height:35px; width:35px;"></span></a>
+                <a href="#">{{patientName}}</a>
+                <hr>
+                <a href="/patient/recordingData">Recording data</a>
+                <a href="/patient/viewData">Viewing data</a>
+                <a href="/patient/leaderboard">Leaderboard</a>
+                <hr>
+                <a href="/patient/Home">Homepage</a>
+                <a href="/patient/updatePwd">Change Password</a>
+                <a href="/patient/aboutDiabetes">About diabetes</a>
+                <a href="/patient/aboutWebsite">About this website</a>
+                <a href='#' onclick="logout()">Log Out</a>
+            </div>
+
+            <div class ="top_buttons_sidebarButton">
+                <span style="font-size:40px;cursor:pointer" onclick="openNav();toggle();">&#9776;</span>
+
+            </div>
+
+        </div>
+        
+        <div class = "top-profile-pic">
+            <span class="iconify" data-icon="gg:profile" style=";height:35px; width:35px;"></span>
+        </div>
+</div>
+
+
+
+    <div class='mainContentLeaderBoard' id = 'blur'>
+
+        <div class = "leaderboardtitle">
+
+            <div class = 'leaderboardtitle-subBlock0'>
+                <div class = "trophy-icon"><span class="iconify" data-icon="ant-design:trophy-filled"></span></div>
+            </div>
+
+            
+
+            <div class = 'leaderboardtitle-subBlock1'>
+                <div class="string">Leader Board</div>
+            </div>
+
+        </div>
+
+
+        <div class = "leaderBoard">
+            {{#each Alldata}}
+                {{#if (firstPlace this.[2])}}
+                    <div class = "leaderBoardBlock">
+                        <div class = "leaderBoard-ProfileSubBlock">
+                            
+                            <div class = "rankIcon"><img src ="/images/179249 1.png"></div>
+                        </div>
+
+                        <div class = "leaderBoard-subBlock">
+                            <div class = "picAndName-subBlock">
+
+                                <div class = "profilepic">
+                                    <span class="iconify" data-icon="gg:profile"></span>
+                                </div>
+
+                                <div class="string">{{this.[0]}}</div>
+
+                            </div>
+                            <div class = "engagementRate-subBlock">
+                                <div class="engagementRate">{{this.[1]}}%</div>
+                                
+                            </div>
+
+                            <div class = "engagementRate-subBlock">
+                                {{#if (isbadge this.[1])}}
+                                    <div class = "theBadege"><img src ="/images/badge.svg"></div>
+                                {{/if}}
+  
+                            </div>
+
+                        </div>
+
+                        
+
+                    </div>           
+                {{/if}}
+
+                {{#if (secondPlace this.[2])}}
+                    <div class = "leaderBoardBlock">
+                        <div class = "leaderBoard-ProfileSubBlock">
+                            <div class = "rankIcon">
+                                <img src ="/images/179251 1.jpg">
+                            </div>
+                            
+                        </div>
+
+                        <div class = "leaderBoard-subBlock">
+                            <div class = "picAndName-subBlock">
+                                <div class = "profilepic">
+                                    <span class="iconify" data-icon="gg:profile"></span>
+                                </div>
+                                <div class="string">{{this.[0]}}</div>
+
+                            </div>
+                            <div class = "engagementRate-subBlock">
+                                <div class="engagementRate">{{this.[1]}}%</div>
+                                
+                            </div>
+
+                            <div class = "engagementRate-subBlock">
+                                {{#if (isbadge this.[1])}}
+                                    <div class = "theBadege"><img src ="/images/badge.svg"></div>
+                                {{/if}}
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                {{/if}}
+
+                {{#if (thirdPlace this.[2])}}
+                    <div class = "leaderBoardBlock">
+                        <div class = "leaderBoard-ProfileSubBlock">
+
+                            <div class = "rankIcon">
+                                <img src ="/images/179250 1.jpg">
+                            </div>
+                        </div>
+
+                        
+
+                        <div class = "leaderBoard-subBlock">
+                            <div class = "picAndName-subBlock">
+                                <div class = "profilepic">
+                                    <span class="iconify" data-icon="gg:profile"></span>
+                                </div>
+                                <div class="string">{{this.[0]}}</div>
+
+                            </div>
+                            <div class = "engagementRate-subBlock">
+                                <div class="engagementRate">{{this.[1]}}%</div>
+                                
+                            </div>
+                            
+                            <div class = "engagementRate-subBlock">
+                                {{#if (isbadge this.[1])}}
+                                    <div class = "theBadege"><img src ="/images/badge.svg"></div>
+                                {{/if}}
+  
+                            </div>
+                        </div>
+                        
+                    </div>
+                {{/if}}
+
+
+                {{#if (fourthPlace this.[2])}}
+                    <div class = "leaderBoardBlock">
+                        <div class = "leaderBoard-ProfileSubBlock">
+                            <div class = "rankNumber">
+                                <div class = "theNumber">4</div>
+                            </div>
+
+                        </div>
+
+                        <div class = "leaderBoard-subBlock">
+                            <div class = "picAndName-subBlock">
+                                <div class = "profilepic">
+                                    <span class="iconify" data-icon="gg:profile"></span>
+                                </div>
+                                <div class="string">{{this.[0]}}</div>
+
+                            </div>
+                            <div class = "engagementRate-subBlock">
+                                <div class="engagementRate">{{this.[1]}}%</div>
+                                
+                            </div>
+
+                            <div class = "engagementRate-subBlock">
+                                {{#if (isbadge this.[1])}}
+                                    <div class = "theBadege"><img src ="/images/badge.svg"></div>
+                                {{/if}}
+  
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                {{/if}}
+
+
+                {{#if (fifthPlace this.[2])}}
+                    <div class = "leaderBoardBlock">
+                        <div class = "leaderBoard-ProfileSubBlock">
+                            <div class = "rankNumber">
+                                <div class = "theNumber">5</div>
+                            </div>
+
+                        </div>
+
+                        <div class = "leaderBoard-subBlock">
+                            <div class = "picAndName-subBlock">
+                                <div class = "profilepic">
+                                    <span class="iconify" data-icon="gg:profile"></span>
+                                </div>
+                                <div class="string">{{this.[0]}}</div>
+
+                            </div>
+                            <div class = "engagementRate-subBlock">
+                                <div class="engagementRate">{{this.[1]}}%</div>
+                                
+                            </div>
+
+                            <div class = "engagementRate-subBlock">
+                                {{#if (isbadge this.[1])}}
+                                    <div class = "theBadege"><img src ="/images/badge.svg"></div>
+                                {{/if}}
+  
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                {{/if}} 
+            {{/each}}
+        </div>
+        
+    </div>
+
+    <script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "50%";
+    }
+          
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+
+    function logout() {
+        var form = document.createElement("form");
+        form.action = "/patient/logout";
+        form.method = "post";
+        var sbmt = document.createElement("input");
+        sbmt.name = "logout-submit";
+        form.appendChild(sbmt);
+        document.body.appendChild(form);
+        form.submit();
+    }
+
+    function toggle(){
+        var blur = document.getElementById('blur')
+        blur.classList.toggle('active')
+    }
+</script>

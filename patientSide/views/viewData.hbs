@@ -1,0 +1,149 @@
+<div class = "top_buttons">
+        <div class = "top_buttons_sidebar">
+            <div id="mySidenav" class="sidenav">
+                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav();toggle();">&times;</a>
+                <a><span class="iconify" data-icon="gg:profile" style="color: black;height:35px; width:35px;"></span></a>
+                <a href="#">{{patientName}}</a>
+                <hr>
+                <a href="/patient/recordingData">Recording data</a>
+                <a href="/patient/viewData">Viewing data</a>
+                <a href="/patient/leaderboard">Leaderboard</a>
+                <hr>
+                <a href="/patient/Home">Homepage</a>
+                <a href="/patient/updatePwd">Change Password</a>
+                <a href="/patient/aboutDiabetes">About diabetes</a>
+                <a href="/patient/aboutWebsite">About this website</a>
+                <a href='#' onclick="logout()">Log Out</a>
+            </div>
+
+            <div class ="top_buttons_sidebarButton">
+               <span style="font-size:40px;cursor:pointer" onclick="openNav();toggle();">&#9776;</span>
+
+            </div>
+
+            
+            <script>
+                function openNav() {
+                document.getElementById("mySidenav").style.width = "50%";
+            }
+          
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+            }
+            </script>
+
+        </div>
+        
+        <div class = "top-profile-pic">
+            <span class="iconify" data-icon="gg:profile" style="height:35px; width:35px;"></span>
+        </div>
+</div>
+
+
+<div class = "main_content-viewData" id="blur">
+
+    <div class = "info">
+                 <div class = "viewData-title">Your Recent Data</div>
+
+
+                <table class = "data">
+
+                    <thead>
+                        <tr>
+                            <th>Date Time</th>
+                            <th>Weight(kg)</th>
+                            <th>Blood glucose level (nmol/L)</th>
+                            <th>Exercise (steps)</th>
+                            <th>Insulin taken (dose)</th>       
+                        </tr>
+
+                        
+
+                    </thead>
+
+                    <tbody>
+                        {{#with patientInfo}}                            
+                            {{#each historyData}}    
+                                <tr>                   
+                                    <td>{{getDateTime when}}</td>
+
+                                    <td>
+
+                                        {{#if (isDataEntered weight)}}
+                                            {{weight}}
+                                        {{else}}
+                                            N/A
+                                        {{/if}}
+                                        
+                                    </td>
+
+                                    <td>
+
+                                        {{#if (isDataEntered bloodGlucoseLevel)}}
+                                            {{bloodGlucoseLevel}}
+                                        {{else}}
+                                            N/A
+                                        {{/if}}
+                                        
+                                    </td>
+
+                                    <td>
+
+                                        {{#if (isDataEntered exercise)}}
+                                            {{exercise}}
+                                        {{else}}
+                                            N/A
+                                        {{/if}}
+                                        
+                                    </td>
+
+                                    <td>
+
+                                        {{#if (isDataEntered doseOfInsulinTaken)}}
+                                            {{doseOfInsulinTaken}}
+                                        {{else}}
+                                            N/A
+                                        {{/if}}
+                                        
+                                        
+                                    </td>
+                                </tr>
+                            {{/each}}                            
+                        {{/with}}
+
+
+                    </tbody>
+                </table>
+
+            
+            </div>
+
+
+</div>
+
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "50%";
+    }
+          
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+
+    function logout() {
+        var form = document.createElement("form");
+        form.action = "/patient/logout";
+        form.method = "post";
+        var sbmt = document.createElement("input");
+        sbmt.name = "logout-submit";
+        form.appendChild(sbmt);
+        document.body.appendChild(form);
+        form.submit();
+    }
+
+    function toggle(){
+        var blur = document.getElementById('blur')
+        blur.classList.toggle('active')
+    }
+</script>

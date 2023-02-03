@@ -1,0 +1,275 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+
+
+.login-page {
+  width: 360px;
+  height:300px;
+  display: flex;
+  justify-content: center;
+}
+
+.login-form {
+  
+  top: -100px;
+  max-width: 360px;
+  
+  padding: 45px;
+  text-align: center;
+
+  width: 100%;
+
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.login-form input {
+  font-family: "Roboto", sans-serif;
+  background: #f2f2f2;
+  width: 100%;
+  border: none;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  margin-bottom:10px;
+}
+
+
+.login-form .loginPageLogin{
+  height:50px;
+  width:200px;
+  display:flex;
+  justify-content: center;
+  text-align: center;
+
+}
+
+.login-form .loginPageLogin a{
+  width:100%;
+  height:100%;
+
+}
+
+.login-form .loginPageLogin input {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #0079C8;
+  width: 100%;
+  height:100%;
+  border: 0;
+  
+  color: #FFFFFF;
+  font-size: 14px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  
+}
+.loginPageLogin input:hover{
+  background: #FFFFFF;
+  color: #0079C8;
+  border:1px solid #0079C8;
+}
+
+
+.login-form input{
+  height:55px
+}
+
+
+.login-form input:focus{
+  
+  border: 1px solid #0079C8;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+.loginPrompt{
+  width:100%;
+  height:25px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.login-form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+
+
+.web-icon {
+  position: relative;
+  top:50px;
+  text-align: center;
+  width: 100%;
+  margin-bottom:60px;
+  margin-top: 80px;
+}
+
+.web-icon .iconify{
+  color: #0079C8; 
+  height:100px;
+  width:100px;
+}
+
+.slogan{
+  text-align:center;
+  width:100%;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  margin-bottom:0px;
+}
+
+.slogan h1{
+    
+  font-size:x-large;
+  color: #0079C8;
+}
+
+.link-pwd
+{
+    color: #0079C8;
+    margin-top: 10px;
+    margin: 20px auto;
+    text-align: center;
+
+    display:flex;
+    flex-direction: row;
+    column-gap: 10px;
+}
+
+.link-pwd a{
+  text-decoration: none;
+  color:#0079C8;
+}
+
+
+.login-page .login-form label {
+  width:100%;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+@media screen and (min-width: 376px) and (max-width:1025px){
+  .loginBGIMG{
+    width:1024px;
+    height:768px;
+    background-image: url('/images/blueMountainRange.jpg');
+    background-size: 1500px;
+  }
+
+
+  .login-page {
+    width: 360px;
+  
+    padding: 8% 0 0;
+    margin: auto;
+    display: block;
+  }
+
+  .login-form {
+    position: relative;
+   
+    z-index: 1;
+    background: #FFFFFF;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  
+    max-width: 300px;
+    margin: 0 auto 100px;
+    padding: 20px;
+    text-align: center;
+
+    width:50%;
+
+    margin-top: 0;
+  }
+
+  .slogan h1{
+    
+    font-size: 30px;
+    color: white;
+  }
+
+  .web-icon{
+    top:0;
+    margin-bottom: 0px;
+    margin-top:30px;
+  }
+
+  .web-icon .iconify{
+    color: white; 
+    height:100px;
+    width:100px;
+    margin-top:0;
+  }
+
+
+.loginPrompt{
+  width:100%;
+  height:25px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+}
+
+
+@media screen and (min-width: 1025px){
+  .loginBGIMG{
+    width:1920px;
+    height:1090px;
+    background-image: url('/images/blueMountainRange.jpg');
+    background-size: 2000px;
+  }
+
+
+  .login-page {
+    width: 400px;
+    padding: 8% 0 0;
+    margin: auto;
+    display: block;
+  }
+
+  .login-form {
+    position: relative;
+    top: -100px;
+    z-index: 1;
+    background: #FFFFFF;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  
+    max-width: 300px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+
+    width:70%;
+
+    margin-top: 0;
+  }
+
+  .slogan h1{
+    
+    font-size: 50px;
+    color: white;
+  }
+
+  .web-icon .iconify{
+    color: white; 
+    height:200px;
+    width:200px;
+  }
+
+
+.loginPrompt{
+  width:100%;
+  height:25px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+}

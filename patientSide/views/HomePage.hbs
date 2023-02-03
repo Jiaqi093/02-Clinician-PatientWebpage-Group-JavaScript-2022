@@ -1,0 +1,112 @@
+<div class = "top_buttons">
+        <div class = "top_buttons_sidebar">
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav();toggle();">&times;</a>
+                <a><span class="iconify" data-icon="gg:profile" style="color: black;height:35px; width:35px;"></span></a>
+                <a href="#">{{patientName}}</a>
+                <hr>
+                <a href="/patient/recordingData">Recording data</a>
+                <a href="/patient/viewData">Viewing data</a>
+                <a href="/patient/leaderboard">Leaderboard</a>
+                <hr>
+                <a href="/patient/Home">Homepage</a>
+                <a href="/patient/updatePwd">Change Password</a>
+                <a href="/patient/aboutDiabetes">About diabetes</a>
+                <a href="/patient/aboutWebsite">About this website</a>
+                <a href='#' onclick="logout()">Log Out</a>
+            </div>
+
+            <div class ="top_buttons_sidebarButton">
+                <span style="font-size:40px;cursor:pointer" onclick="openNav();toggle();">&#9776;</span>
+            </div>
+
+
+        </div>
+        
+        <div class = "top-profile-pic">
+            <span class="iconify" data-icon="gg:profile" style=";height:35px; width:35px;"></span>
+        </div>
+</div>
+
+
+    <div class = "main_content" id = 'blur'>
+        <div class = "promotion-Section">
+
+            <div class ="promotion-section-title">
+                <div class = "title-box">Current Campaign</div>
+            </div>
+
+            <div class = "promotion-section-subBlck">
+                <div class  = "promotion-img">
+                    <img class= "curr_promotion_img" src="/images/2020_da_lowdown_cover_facebook.jpg" alt="current promotion image">
+                </div>
+
+                <div class  = "promotion-text">
+                    <div class ="promotion-text-title">
+                        <div class = "title-box"><h2>The Lowdown</h2></div>
+                    </div>
+                
+                    <p class="promotion-info"> 
+                        The Lowdown – #HyposHappen is a social media campaign, focusing mainly on people living with type 1 diabetes and giving them a voice to discuss their stories. 
+                        The diabetes community responded generously sharing their experiences of the mental and physical impact of hypos.
+                    </p>
+
+                </div>
+            </div>
+            
+           
+        </div>
+
+        <div class = "clinicianCommentSection">
+
+            <div class ="clinicianCommentSection-title">
+                <div class = "title-box">From your clinician</div>
+            </div>
+
+
+            <div class = "clinicianComment">
+
+            
+                <span class = "clinicianComment-text">
+                    
+                        {{patientData}}
+
+                </span>
+                
+
+            </div>
+            
+        </div>
+
+    </div>
+
+     
+
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "50%";
+    }
+          
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+
+    function logout() {
+        var form = document.createElement("form");
+        form.action = "/patient/logout";
+        form.method = "post";
+        var sbmt = document.createElement("input");
+        sbmt.name = "logout-submit";
+        form.appendChild(sbmt);
+        document.body.appendChild(form);
+        form.submit();
+    }
+
+    function toggle(){
+        var blur = document.getElementById('blur')
+        blur.classList.toggle('active')
+    }
+</script>
+
+

@@ -1,0 +1,142 @@
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+    <div class="wrapper">
+
+        <div class="sidebar">
+            <div class = "logo">
+                <i class="iconify" data-icon="arcticons:diabetesm"></i>
+            </div>
+
+            <ul>
+                <li><a href="/clinician/home"> <i class="iconify" data-icon="ant-design:dashboard-outlined"></i>Dash Board</a></li>
+                <li><a href="/clinician/comment"><i class="iconify" data-icon="ooui:message"></i>Comments</a></li>
+                <li><a href='#' onclick="logout()"><i class="iconify" data-icon="bx:log-out"></i>Log Out</a></li>
+            </ul> 
+        </div>
+
+
+        <div class="main_content">
+            <div class="header">
+                <i class="iconify" data-icon="healthicons:ui-user-profile"></i>
+
+
+
+                <h2>{{#with oneItem}}{{nameGiven}}{{/with}}</h2>
+            </div>
+
+
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Tableview</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#chartview">Chartview</a>
+            </div>
+        </div>
+
+        <script>
+            /* When the user clicks on the button, 
+            toggle between hiding and showing the dropdown content */
+            function myFunction() {
+              document.getElementById("myDropdown").classList.toggle("show");
+            }
+            
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function(event) {
+              if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                  var openDropdown = dropdowns[i];
+                  if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                  }
+                }
+              }
+            }
+            </script>
+
+            
+            <div class = "info">
+                <table class = "data">
+                    <tbody>
+                        <tr>
+                            <td><h3>Date Time</h3></td>
+                            <td><h3>Weight(kg)</h3></td>
+                            <td><h3>Blood glucose level (nmol/L)</h3></td>
+                            <td><h3>Exercise (steps)</h3></td>
+                            <td><h3>Insulin taken (dose)</h3></td>       
+                  
+                        </tr>
+
+                        {{#with oneItem}}                            
+                            {{#each historyData}}    
+                                <tr>                   
+                                    <td>{{getDateTime when}}</td>
+
+                                    <td>
+
+                                        {{#if (isDataEntered weight)}}
+                                            {{weight}}
+                                        {{else}}
+                                            N/A
+                                        {{/if}}
+                                        
+                                    </td>
+
+                                    <td>
+
+                                        {{#if (isDataEntered bloodGlucoseLevel)}}
+                                            {{bloodGlucoseLevel}}
+                                        {{else}}
+                                            N/A
+                                        {{/if}}
+                                        
+                                    </td>
+
+                                    <td>
+
+                                        {{#if (isDataEntered exercise)}}
+                                            {{exercise}}
+                                        {{else}}
+                                            N/A
+                                        {{/if}}
+                                        
+                                    </td>
+
+                                    <td>
+
+                                        {{#if (isDataEntered doseOfInsulinTaken)}}
+                                            {{doseOfInsulinTaken}}
+                                        {{else}}
+                                            N/A
+                                        {{/if}}
+                                        
+                                        
+                                    </td>
+                                </tr>
+                            {{/each}}                            
+                        {{/with}}
+                    </tbody>
+                </table>
+
+        
+            </div>
+
+            
+        </div>
+    </div>
+
+
+    <script>
+function logout() {
+  var form = document.createElement("form");
+  form.action = "/clinician/logout";
+  form.method = "post";
+  var sbmt = document.createElement("input");
+  sbmt.name = "logout-submit";
+  form.appendChild(sbmt);
+  document.body.appendChild(form);
+  form.submit();
+}
+
+</script>
+

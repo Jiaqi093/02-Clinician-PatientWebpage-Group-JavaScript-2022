@@ -1,0 +1,1058 @@
+
+
+/*
+ * Made by Erik Terwan
+ * 24th of November 2015
+ * MIT License
+ *
+ *
+ * If you are thinking "myFormB using this in
+ * production code, beware of the browser
+ * prefixes.
+ */
+ 
+ #menuToggle
+ {
+   display: block;
+   position: relative;
+   top: 50px;
+   left: 50px;
+   
+   z-index: 1;
+   
+   -webkit-user-select: none;
+   user-select: none;
+ }
+ 
+ #menuToggle a
+ {
+   text-decoration: none;
+   color: #F2F4F8;
+   
+   transition: color 0.3s ease;
+ }
+ 
+ #menuToggle a:hover
+ {
+   color: tomato;
+ }
+ 
+ 
+ #menuToggle input
+ {
+   display: block;
+   width: 40px;
+   height: 32px;
+   position: absolute;
+   top: -7px;
+   left: -5px;
+   
+   cursor: pointer;
+   
+   opacity: 0; /* hide this */
+   z-index: 2; /* and place it over the hamburger */
+   
+   -webkit-touch-callout: none;
+ }
+ 
+ /*
+  * Just a quick hamburger
+  */
+ #menuToggle span
+ {
+   display: block;
+   width: 33px;
+   height: 4px;
+   margin-bottom: 5px;
+   position: relative;
+   
+   background: #cdcdcd;
+   border-radius: 3px;
+   
+   z-index: 1;
+   
+   transform-origin: 4px 0px;
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease;
+ }
+ 
+ #menuToggle span:first-child
+ {
+   transform-origin: 0% 0%;
+ }
+ 
+ #menuToggle span:nth-last-child(2)
+ {
+   transform-origin: 0% 100%;
+ }
+ 
+ /* 
+  * Transform all the slices of hamburger
+  * into a crossmark.
+  */
+ #menuToggle input:checked ~ span
+ {
+   opacity: 1;
+   transform: rotate(45deg) translate(-2px, -1px);
+   background: #232323;
+ }
+ 
+ /*
+  * But let's hide the middle one.
+  */
+ #menuToggle input:checked ~ span:nth-last-child(3)
+ {
+   opacity: 0;
+   transform: rotate(0deg) scale(0.2, 0.2);
+ }
+ 
+ /*
+  * Ohyeah and the last one should go the other direction
+  */
+ #menuToggle input:checked ~ span:nth-last-child(2)
+ {
+   transform: rotate(-45deg) translate(0, -1px);
+ }
+ 
+ /*
+  * Make this absolute positioned
+  * at the top left of the screen
+  */
+ #menu
+ {
+   position: absolute;
+   width: 30%;
+   height: 1000px;
+   margin: -100px 0 0 -57px;
+   padding: 50px;
+   padding-top: 125px;
+   
+   background: #0079C8;
+   list-style-type: none;
+   -webkit-font-smoothing: antialiased;
+   /* to stop flickering of text in safari */
+   
+   transform-origin: 0% 0%;
+   transform: translate(-100%, 0);
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+ }
+ 
+ #menu li
+ {
+   padding: 10px 0;
+   font-size: 22px;
+ }
+ 
+ /*
+  * And let's slide it in from the left
+  */
+ #menuToggle input:checked ~ ul
+ {
+   transform: none;
+ }
+
+
+/*buttons on the top*/
+.top_buttons{
+    display: flex;
+    flex-direction:row;
+    width: 100%;
+    justify-content: space-between;
+    height: 65px;
+    
+}
+
+/*profile pic*/
+.icon{
+    position: absolute;
+    right:50px; 
+    color: #717171;
+    font-size: 2.5em;
+    margin-top: 12px;
+}
+
+.title{
+   
+    margin-bottom: auto;
+    font-size: 25px;
+    color: #0079C8;
+}
+
+#current_date{
+    margin-top: auto;
+    
+    font-size: 20px;
+    color: #232323;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    column-count: 1;
+    margin-right: 15px;
+    font-family: 'SF Pro';
+    font-style:normal;
+    font-weight: 270;
+}
+
+.each{
+    margin-left: 22px;
+    display: flex;
+    flex-direction: column;
+    column-gap: 20px;
+}
+
+
+.line{
+    display: flex;
+}
+
+.line1{
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+}
+
+.red-star {
+    color: red;
+    margin-top: 5px;
+    margin-right: 5px;
+    display:inline-block;
+    width:5px;
+    height:5px;
+}
+
+#starE{
+    visibility:hidden;
+}
+
+.topic{
+    font-size: 20px;
+    margin-left: 5px;
+    color: #0079C8;
+    display:inline-block
+}
+
+.line1_right{
+    display: flex;
+    flex-direction: row;
+}
+
+.add_comments{
+    font-size: 10px; 
+    margin-top: 18px;
+    text-decoration: underline;
+    /* display:inline-block */
+}
+
+#commentB{
+    margin-left: 14px;
+}
+
+#commentW{
+    margin-left: 133px;
+}
+
+#commentD{
+    margin-left: 8px;
+}
+
+#commentE{
+    margin-left: 127px;
+}
+
+.open-button{
+    width: 20px;
+    height: 20px;
+    margin-top: 20px;
+    margin-left: 10px;
+    border-style: none;
+    display:inline-block
+}
+
+.tick{
+    width: 32px;
+    height: 32px;
+    margin-top: 6px;
+    margin-left: 10px;
+    border-style: none;
+    display:inline-block
+}
+
+.form-control {
+    width: 280px;
+    height: 48px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #0079C8;
+    border-radius:9px;
+    margin-bottom: 0%;
+    margin-top: 0%;
+    color: black;
+    
+  }
+
+.comment{
+    font-size: 10px;
+}
+
+.form{
+    margin-left: 10px;
+    display: flex;
+}
+
+
+.submit{
+    margin-top: 50px;
+    display: table;
+    margin-right: auto;
+    margin-left: auto;
+
+    
+}
+
+.submit_button{
+    width: 116px;
+    height: 37px;
+    background-color: #0079C8;
+    border-radius:4px;
+    border-style: none;
+    color: #FFFFFF;
+
+   
+    font-weight: 274;
+    font-size: 20px;
+    line-height: 29px;
+    margin-right: auto;
+    font-family: 'SF Pro';
+    font-style:normal;
+    font-weight: 270;
+
+}
+
+.submit_button:hover{
+    cursor: pointer;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    top:0;
+    left: 0; 
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+}
+  
+/* Add styles to the form container */
+.form-container {
+    border-radius: 20px;
+    width: 355px;
+    height: 300px;
+    background:url("/images/peoplePlant.jpg") no-repeat;
+    text-align: center;
+    margin: 0 auto; 
+    position:relative; 
+    top: 25%;
+    padding-top: 10px;
+
+}
+
+.comment_area{
+    width:308px;
+    height:147px;
+    border-radius: 25px;
+    background-color: #F2F4F8;
+    margin-top: 25px;
+}
+
+.comment_title{
+    font-family: "SF Pro", sans-serif;
+    color: #FFFFFF;
+    font-size: 20px;
+    margin: auto;
+    margin-top: 5px;
+}
+
+.btn_cancel{
+    width: 149px;
+    height: 33px;
+    background: #F2F4F8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+
+}
+
+.patient-comment{
+    width: 300px;
+    height:260px;
+
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    margin-left: 10px;
+    color: #0079C8;
+}
+
+.patient-comment .WorkingWithPatient-row3Wrapper-Block{
+    height: 90%;
+    width: 300px;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+  
+    display: block;
+    align-items: center;
+  
+    border: 2px solid #0079C8;
+    margin-top: 20px;
+
+    
+    
+  }
+  
+  
+.patient-comment .WorkingWithPatient-row3Wrapper-Block label{
+    font-size: x-large;
+    color: #0079C8;
+  }
+  
+  
+.patient-comment .WorkingWithPatient-row3Wrapper-Block .row3textarea textarea{
+  
+    height: 180px;
+    width: 260px;
+  
+    box-sizing: border-box;
+    border: 1px solid #0079C8;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    border-radius: 5px;
+  
+    padding-left: 10px;
+    padding-top: 10px;
+  
+    background-color:white;
+
+    
+  
+}
+
+.patient-comment .WorkingWithPatient-row3Wrapper-Block textarea:focus {
+    border: 2px solid #0079C8;
+    color: #555;
+}
+
+.enterStatus{
+    margin-left: 5px;
+    width:32px;
+    height:32px;
+    border: none;
+}
+
+
+.recordingDataMainContent{
+    align-items: center;
+    
+}
+
+.recordingDataMainContent#blur.active{
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
+
+.form-control[type=number]:disabled {
+    font-size: 15px;
+    background: #BDBDBD;
+    color: #717171;
+}
+
+.patient-comment .WorkingWithPatient-row3Wrapper-Block .row3button{
+    font-family: 'SF Pro';
+    font-style:normal;
+    font-weight: 270;
+}
+
+
+.patient-comment .WorkingWithPatient-row3Wrapper-Block .row3button button{
+    width: 50px;
+    height:28px;
+    font-size: 15px;
+    
+    border-style: none;
+    border-radius: 4px;
+    color: #FFFFFF;
+    background-color: #0079C8;
+    font-family: 'SF Pro';
+    font-style:normal;
+    font-weight: 270;
+}
+
+.patient-comment .WorkingWithPatient-row3Wrapper-Block .row3button button:hover{
+    cursor: pointer;
+    background-color: #FFFFFF;
+    color: #0079C8;
+    border: 1px solid #0079C8;
+    transition: 0.4s;
+
+}
+
+@media screen and (min-width: 376px) and (max-width:1025px){
+
+    .recordingDataMainContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width:800px;
+        height:500px;
+
+        margin-top: 100px;
+        column-count: 2;
+        background-color: white;
+        border-radius: 4px;
+        border: 2px solid #0079C8;
+    }
+
+    .title{
+        position: absolute;
+        width: 539px;
+        height: 48px;
+        left: 203px;
+        top: 69px;
+        
+        font-family: 'SF Pro';
+        
+        font-weight: 274;
+        font-size: 30px;
+        line-height: 48px;
+        /* identical to box height */
+        
+        text-align: center;
+        
+        color: #0079C8;
+        display: flex;
+    }
+
+    #current_date{
+        margin-top: 30px;
+        margin-left: 10px;
+        font-size: 30px;
+        color: #232323;
+    }
+
+    .form-group{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        width:800px;
+    }
+
+    .each{
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-right: 100px;
+        width:75%;
+    }
+
+    .line1{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .line1_left{
+        margin-bottom: 5px;
+        height: 25px;
+        
+    }
+
+    .form-control{
+        font-size: 20px;
+    }
+
+    .form-control[type=number]:disabled {
+        font-size: 20px;
+        background: #D3D3D3;
+    }
+
+    #line1B{
+        margin-left: 6px;
+    }
+
+    #line1W{
+        margin-left: 157px;
+    }
+
+    #line1E{
+        margin-left: 120px;
+    }
+
+    #line1D{
+        margin-left: 21px;
+    }
+
+    
+    .line1_right{
+        margin-top: 0px;
+        align-items: end;
+        margin-left: 90px;
+    }
+
+    .open-button{
+        margin-bottom: 10px;
+    }
+
+    .add_comments{ 
+        margin-top: 0px;
+        /* display:inline-block */
+    }
+
+    .line{
+        margin-bottom: 0%;
+        margin-top: 20px;
+    }
+
+    .comment{
+        margin-bottom: 0%;
+        margin-top: 20px;
+        max-width: 600px;
+    }
+
+    #commentB{
+        margin-left: 18px;
+    }
+
+    #commentW{
+        margin-left: 18px;
+    }
+    
+    #commentD{
+        margin-left: 18px;
+    }
+    
+    #commentE{
+        margin-left: 18px;
+    }
+    
+    .submit{
+        display: flex;
+
+    }
+    
+    .submit_button{
+        width: 116px;
+        height: 37px;
+        
+        border-radius: 4px;
+        color: #FFFFFF;
+        background-color: #0079C8;
+        border-style: none;
+
+        font-size: 24px;
+        line-height: 29px;
+        margin-right: auto;
+
+        font-family: 'SF Pro';
+        font-weight: 274;
+    
+    }
+
+    .submit_button:hover{
+        
+        background-color: #FFFFFF;
+        color: #0079C8;
+        border: 1px solid #0079C8;
+        transition: 0.4s;
+    }
+
+    .patient-comment{
+        height:90%;
+        width:830px;
+    }
+
+    .patient-comment .WorkingWithPatient-row3Wrapper-Block{
+        height: 350px;
+        width: 350px;
+        background-color: white;
+        border-radius: 5px;
+        text-align: center;
+      
+        display: block;
+        align-items: flex-start;
+      
+        border: 2px solid #0079C8;
+        
+      }
+      
+      
+    .patient-comment .WorkingWithPatient-row3Wrapper-Block label{
+        font-size: 50px;
+    
+      }
+      
+      
+    .patient-comment .WorkingWithPatient-row3Wrapper-Block .row3textarea textarea{
+      
+        height: 270px;
+        width: 330px;
+      
+        box-sizing: border-box;
+        border: 1px solid #0079C8;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
+        border-radius: 5px;
+      
+        padding-left: 10px;
+        padding-top: 10px;
+      
+        background-color:white;
+
+        font-size: 20px;
+        color:#555
+      
+      }
+
+    .patient-comment .WorkingWithPatient-row3Wrapper-Block textarea:focus {
+        border: 2px solid #0079C8;
+        color: black;
+    }
+
+    .patient-comment .WorkingWithPatient-row3Wrapper-Block .row3button button{
+        width: 69px;
+        height:35px;
+        font-size: 20px;
+        
+        border-style: none;
+        border-radius: 4px;
+        color: #FFFFFF;
+        background-color: #0079C8;
+
+        
+    }
+
+    .patient-comment .WorkingWithPatient-row3Wrapper-Block .row3button button:hover{
+        cursor: pointer;
+        background-color: #FFFFFF;
+        color: #0079C8;
+        border: 1px solid #0079C8;
+        transition: 0.4s;
+
+    }
+
+    .patientComment{
+        font-size: 25px;
+        color: #0079C8;
+    }
+
+    .enterStatus{
+        margin-left: 10px;
+        width:32px;
+        height:32px;
+    }
+
+    .recordingDataMainContent#blur.active{
+        filter: blur(20px);
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .patient-comment .WorkingWithPatient-row3Wrapper-Block .row3button{
+        font-family: 'SF Pro';
+        font-style:normal;
+        font-weight: 270;
+    }
+
+}
+
+
+
+
+@media screen and (min-width: 1025px) {
+    
+    
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width:1000px;
+        height:500px;
+
+        margin-top: 100px;
+        column-count: 2;
+        background-color: white;
+        border-radius: 4px;
+        border: 2px solid #0079C8;
+    }
+
+    .title{
+        position: absolute;
+        width: 539px;
+        height: 48px;
+        left: 203px;
+        top: 69px;
+        
+        font-family: 'SF Pro';
+        
+        font-weight: 274;
+        font-size: 30px;
+        line-height: 48px;
+        /* identical to box height */
+        
+        text-align: center;
+        
+        color: #0079C8;
+        display: flex;
+    }
+
+    #current_date{
+        margin-top: 30px;
+        margin-left: 10px;
+        font-size: 30px;
+        color: #232323;
+    }
+
+    .form-group{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        width:1000px;
+    }
+
+    .each{
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-right: 320px;
+        width:75%;
+    }
+
+    .line1{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .line1_left{
+        margin-bottom: 5px;
+        height: 25px;
+        
+    }
+
+    .form-control{
+        font-size: 20px;
+    }
+
+    .form-control[type=number]:disabled {
+        font-size: 20px;
+        background: #D3D3D3;
+    }
+
+    #line1B{
+        margin-left: 6px;
+    }
+
+    #line1W{
+        margin-left: 157px;
+    }
+
+    #line1E{
+        margin-left: 120px;
+    }
+
+    #line1D{
+        margin-left: 21px;
+    }
+
+    
+    .line1_right{
+        margin-top: 0px;
+        align-items: end;
+        margin-left: 90px;
+    }
+
+    .open-button{
+        margin-bottom: 10px;
+    }
+
+    .add_comments{ 
+        margin-top: 0px;
+        /* display:inline-block */
+    }
+
+    .line{
+        margin-bottom: 0%;
+        margin-top: 20px;
+    }
+
+    .comment{
+        margin-bottom: 0%;
+        margin-top: 20px;
+        max-width: 600px;
+    }
+
+    #commentB{
+        margin-left: 18px;
+    }
+
+    #commentW{
+        margin-left: 18px;
+    }
+    
+    #commentD{
+        margin-left: 18px;
+    }
+    
+    #commentE{
+        margin-left: 18px;
+    }
+    
+    .submit{
+        display: flex;
+
+    }
+    
+    .submit_button{
+        width: 116px;
+        height: 37px;
+        
+        border-radius: 4px;
+        color: #FFFFFF;
+        background-color: #0079C8;
+        border-style: none;
+
+        font-size: 24px;
+        line-height: 29px;
+        margin-right: auto;
+
+        font-family: 'SF Pro';
+        font-weight: 274;
+    
+    }
+
+    .submit_button:hover{
+        
+        background-color: #FFFFFF;
+        color: #0079C8;
+        border: 1px solid #0079C8;
+        transition: 0.4s;
+    }
+
+    .patient-comment{
+        height:90%;
+        width:1000px;
+    }
+
+    .patient-comment .WorkingWithPatient-row3Wrapper-Block{
+        height: 350px;
+        width: 350px;
+        background-color: white;
+        border-radius: 5px;
+        text-align: center;
+      
+        display: block;
+        align-items: flex-start;
+      
+        border: 2px solid #0079C8;
+        
+      }
+      
+      
+    .patient-comment .WorkingWithPatient-row3Wrapper-Block label{
+        font-size: 50px;
+    
+      }
+      
+      
+    .patient-comment .WorkingWithPatient-row3Wrapper-Block .row3textarea textarea{
+      
+        height: 270px;
+        width: 330px;
+      
+        box-sizing: border-box;
+        border: 1px solid #0079C8;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
+        border-radius: 5px;
+      
+        padding-left: 10px;
+        padding-top: 10px;
+      
+        background-color:white;
+
+        font-size: 20px;
+        color:#555
+      
+      }
+
+    .patient-comment .WorkingWithPatient-row3Wrapper-Block textarea:focus {
+        border: 2px solid #0079C8;
+        color: black;
+    }
+
+    .patient-comment .WorkingWithPatient-row3Wrapper-Block .row3button button{
+        width: 69px;
+        height:35px;
+        font-size: 20px;
+        
+        border-style: none;
+        border-radius: 4px;
+        color: #FFFFFF;
+        background-color: #0079C8;
+
+        
+    }
+
+    .patient-comment .WorkingWithPatient-row3Wrapper-Block .row3button button:hover{
+        cursor: pointer;
+        background-color: #FFFFFF;
+        color: #0079C8;
+        border: 1px solid #0079C8;
+        transition: 0.4s;
+
+    }
+
+    .patientComment{
+        font-size: 25px;
+        color: #0079C8;
+    }
+
+    .enterStatus{
+        margin-left: 10px;
+        width:32px;
+        height:32px;
+    }
+
+    .recordingDataMainContent#blur.active{
+        filter: blur(20px);
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .patient-comment .WorkingWithPatient-row3Wrapper-Block .row3button{
+        font-family: 'SF Pro';
+        font-style:normal;
+        font-weight: 270;
+    }
+
+}

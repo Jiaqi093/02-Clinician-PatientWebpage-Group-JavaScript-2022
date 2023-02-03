@@ -1,0 +1,44 @@
+.page404{
+    height:100%;
+    width:100%;
+
+    color:white;
+}
+
+@media screen and (min-width: 376px) and (max-width:1025px){
+    .page404{
+        height:110px;
+        width:1024px;
+        background-image: url('/images/christoffer-engstrom-wc9avd2RaN0-unsplash.jpg');
+        background-size: 2500px;
+        margin-top: 300px;
+        
+    }
+    .page404 h1, .page404 a{
+    
+        color: black;
+        font-family: 'SF Pro';
+        font-style:normal;
+        font-weight: 270;
+    
+    }
+}
+
+@media screen and (min-width: 1026px){
+    .page404{
+        height:150px;
+        width:100%;
+        background-image: url('/images/christoffer-engstrom-wc9avd2RaN0-unsplash.jpg');
+        background-size: 2500px;
+        margin-top: 420px;
+        
+    }
+    .page404 h1, .page404 a{
+    
+        color: black;
+        font-family: 'SF Pro';
+        font-style:normal;
+        font-weight: 270;
+    
+    }
+}

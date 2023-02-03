@@ -1,0 +1,105 @@
+
+<div class = "top_buttons">
+
+     {{#if loggedin}}
+        <div class = "top_buttons_sidebar">
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav();toggle();">&times;</a>
+                <a><span class="iconify" data-icon="gg:profile" style="color: black;height:35px; width:35px;"></span></a>
+                <a href="#">{{patientName}}</a>
+                <hr>
+                <a href="/patient/recordingData">Recording data</a>
+                <a href="/patient/viewData">Viewing data</a>
+                <a href="/patient/leaderboard">Leaderboard</a>
+                <hr>
+                <a href="/patient/Home">Homepage</a>
+                <a href="/patient/updatePwd">Change Password</a>
+                <a href="/patient/aboutDiabetes">About diabetes</a>
+                <a href="/patient/aboutWebsite">About this website</a>
+                <a href='#' onclick="logout()">Log Out</a>
+            </div>
+
+            <div class ="top_buttons_sidebarButton">
+                <span style="font-size:40px;cursor:pointer" onclick="openNav();toggle();">&#9776;</span>
+            </div>
+
+
+        </div>
+
+
+     {{/if}}
+        
+</div>
+
+    <div class = "main-content-about"> 
+
+        {{#if loggedin}}
+
+            <div class = "login-button">
+                
+            </div>
+            
+        {{else}}
+            <div class = "login-button">
+                <div class ='Login_button-desktop'><a href="/patient/login"><input type="button"  value="Log In"/></a></div>
+            </div>
+
+        {{/if}}
+
+
+
+        <div class = "container-About">
+            <div class="abt_web">
+                <h3 class="web_heading">About this website</h3>
+                <p class="web_info">This website is built to help people to manage their diabetes in the
+                    convenience of their own home. It allows people to recording down the data such as blood glucose level, 
+                    weight, doses of insulin taken and daily exercises, which is easier to be monitored by their clinician.</p>    
+            </div>
+
+            <div class="abt_team">
+                <h3 class="team_heading">About our team</h3>
+                <p class="team_info">This website is built by 5 of our team members, includes Jiaqi Zhuang, 
+                    Jacky Lian, NanQian, Yaoqi Yu and Ruiqi Yu. </p>
+            </div>
+
+            <div class="notice">
+                <h3 class="notice_heading">Notice</h3>
+                <p class="notice_info">You are allowed to preview our information page. 
+                However, you need to login to your account if you would like to access most of the features. </p>
+            </div>
+        
+
+        
+    </div>  
+
+ 
+
+
+    
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "50%";
+    }
+          
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+
+    function logout() {
+        var form = document.createElement("form");
+        form.action = "/patient/logout";
+        form.method = "post";
+        var sbmt = document.createElement("input");
+        sbmt.name = "logout-submit";
+        form.appendChild(sbmt);
+        document.body.appendChild(form);
+        form.submit();
+    }
+
+    function toggle(){
+        var blur = document.getElementById('blur')
+        blur.classList.toggle('active')
+    }
+</script>
+

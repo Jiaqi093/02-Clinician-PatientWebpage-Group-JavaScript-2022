@@ -1,0 +1,78 @@
+
+
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+    <div class="wrapper">
+
+        <div class="sidebar">
+            <div class = "logo">
+                <i class="iconify" data-icon="arcticons:diabetesm"></i>
+            </div>
+            <ul>
+                <li><a a href="/clinician/home"> <i class="iconify" data-icon="ant-design:dashboard-outlined"></i>Dash Board</a></li>
+                <li class = "current"><a href="#"><i class="iconify" data-icon="ooui:message"></i>Comments</a></li>
+                <li><a href='#' onclick="logout()"><i class="iconify" data-icon="bx:log-out"></i>Log Out</a></li>
+            </ul> 
+        </div>
+
+
+        <div class="main_content">
+            <div class="header">
+                <i class="iconify" data-icon="healthicons:ui-user-profile"></i>
+                <h2>Comment</h2>
+            </div>
+
+            <div class = "info">
+                <table class = "all-comments">
+                    <col style="width:15%">
+	                <col style="width:15%">
+	                <col style="width:60%">
+                    <col style="width:30%">
+
+                    <tbody>
+
+                        {{#if (isNull allComments)}}
+                            <tr>
+                                <td>
+                                    No Comment
+                                </td>
+                            </tr>
+                            
+                        {{else}}
+                            {{#each allComments}} 
+                            <tr>
+                                <td><span class="iconify" data-icon="gg:profile" style="color: #D7DBDE; height:70px; width:100%;"></span></td>
+                                <td><a href = "/clinician/{{patientID}}">{{firstName}} {{lastName}}</a></td>
+                                <td><a href ="/clinician/{{patientID}}">{{comments}}</a></td>
+                                <td><a href = "/clinician/{{patientID}}"><button class = "viewData-button" type="button">View Data</button></a></td>
+                            </tr>
+                        {{/each}}
+                        {{/if}}
+                        
+                        
+                    </tbody>
+                </table>
+
+            </div>
+
+            
+        </div>
+    </div>
+
+</ul>
+
+<script>
+function logout() {
+  var form = document.createElement("form");
+  form.action = "/clinician/logout";
+  form.method = "post";
+  var sbmt = document.createElement("input");
+  sbmt.name = "logout-submit";
+  form.appendChild(sbmt);
+  document.body.appendChild(form);
+  form.submit();
+}
+
+</script>
+
+

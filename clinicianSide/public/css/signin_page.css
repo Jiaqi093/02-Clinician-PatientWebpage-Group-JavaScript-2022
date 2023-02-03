@@ -1,0 +1,185 @@
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+
+.form {
+  position: relative;
+  top: -100px;
+
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: left;
+  border-radius: 2px;
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: white;
+  width: 100%;
+  border: 0;
+  margin-bottom: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border: 1px solid #0079C8;
+  border-radius: 2px;
+}
+
+.form label {
+  width:100%;
+  text-align: left;
+}
+
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #0079C8;
+  width: 60%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-bottom:10px;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #0079C8;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+
+.web-icon {
+  position: relative;
+  top:50px;
+  text-align: center;
+  width: 100%;
+  margin-bottom:60px;
+}
+
+.slogan{
+  text-align:center;
+  width:100%;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  margin-bottom:40px;
+}
+
+
+.link-pwd
+{
+    color: #0079C8;
+
+    margin: 20px auto;
+    text-align: center;
+}
+
+.link-pwd a
+{
+  color: #555;
+  text-decoration: underline;
+  font-size: 15px;
+
+  margin: 20px auto;
+  text-align: center;
+}
+
+
+.loginSubmitButton{
+  width:100%;
+  text-align: center;
+}
+
+.loginPrompt{
+  width:100%;
+  height:15px;
+  margin-bottom: 10px;
+
+}
+
+
+
+@media screen and (min-width: 381px){
+
+  .login-page{
+    width: 500px;
+    padding: 8% 0 0;
+    margin: auto;
+  }
+
+  .form {
+    position: relative;
+    top: -100px;
+    z-index: 1;
+    background: #FFFFFF;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+
+    text-align: left;
+
+    height: 400px;
+    max-width:400px;
+    
+    font-size: 20px;
+    
+  }
+
+  .form input{
+    margin-bottom: 15px;
+   
+  }
+
+  .form .loginInputLabe label{
+    width:80%;
+    text-align: left;
+    
+  }
+
+  .loginSubmitButton{
+    width:100%;
+    text-align: center;
+  }
+
+  .loginPrompt{
+    width:100%;
+    height:20px;
+    margin-bottom: 10px;
+  }
+
+  .form button{
+    height: 50px;
+  }
+
+  .form button:hover {
+    background: white;
+    color:#0079C8;
+    cursor: pointer;
+    border:1px solid #0079C8;
+  }
+
+  .link-pwd a{
+    color: #555;
+    text-decoration: underline;
+    font-size: 15px;
+
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .slogan{
+    text-align:center;
+    width:100%;
+    font-family: 'Open Sans';
+    font-size:30px;
+  }
+
+
+
+}

@@ -1,0 +1,248 @@
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+
+    <div class="wrapper">
+
+        <div class="sidebar">
+            <div class = "logo">
+                <i class="iconify" data-icon="arcticons:diabetesm"></i>
+            </div>
+            <ul>
+                <li class = "current"><a href="#"> <i class="iconify" data-icon="ant-design:dashboard-outlined"></i>Dash Board</a></li>
+                <li><a href="/clinician/comment"><i class="iconify" data-icon="ooui:message"></i>Comments</a></li>
+
+                <form id="logout" action="/clinician/logout" method="POST"></form>
+                <li><a href='#' onclick="logout()"><i class="iconify" data-icon="bx:log-out"></i>Log Out</a></li>
+            </ul> 
+        </div>
+
+
+        <div class="main_content">
+            <div class="header">
+                <i class="iconify" data-icon="healthicons:ui-user-profile"></i>
+                <h2>Dashboard</h2>
+            </div>
+
+            <div class = "info">
+
+                <div class = "dashboardHeading">
+
+                    <div class = "todayINFO">
+                        Hi {{clinicianName}}! Today is {{date}}
+                        
+                    </div>
+
+                    <div class = "clinicianFunction">
+                    <a href="/clinician/updatePwd"><button  class="open-button"> Change Password </button> </a>
+
+            
+                    <button class="open-button" onclick="openForm()">Register New Patient</button>
+                    <div class="form-popup" id="myForm">
+
+                    <!-- supply the clinician info as he creates a new user-->
+                    <form action="newUser" method="post" class="form-container">
+
+                        <div class = "centredObject">
+                        <h1>Register Patient</h1>
+
+                        <label for="psw"><b>First Name</b></label>
+                        <input type="text" placeholder="Enter First Name" name="givenName" required>
+    
+                        <label for="psw"><b>Last Name</b></label>
+                        <input type="text" placeholder="Enter Last Name" name="familyName" required>
+    
+                        <label for="email"><b>Email</b></label>
+                        <input type="email" placeholder="Enter Email" name="email" required>
+    
+                        <label for="psw"><b>Password</b></label>
+                        <input type="text" placeholder="Enter Password" name="password" required>
+
+                        <button type="submit" class="btn">Add</button>
+                        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                        </div>
+
+                    </form>
+                    </div>
+                </div>
+
+
+
+                </div>
+                
+
+                
+
+                <script>
+                    function openForm() {
+                        document.getElementById("myForm").style.display = "block";
+                    }
+
+
+                    function closeForm() {
+                        document.getElementById("myForm").style.display = "none";
+                    }
+
+                </script>   
+
+
+                <table class = "data">
+
+                    <col style="width:15%">
+	                <col style="width:15%">
+	                <col style="width:15%">
+                    <col style="width:15%">
+                    <col style="width:15%">
+	                <col style="width:15%">
+
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <td><h3>Patients</h3></td>
+                            <td><h3>Weight(kg)</h3></td>
+                            <td><h3>Blood glucose level (nmol/L)</h3></td>
+                            <td><h3>Exercise (steps)</h3></td>
+                            <td><h3>Insulin taken (dose)</h3></td>       
+                        </tr>
+                    </thead>
+
+                    
+                    
+                    <tbody>
+                        {{#each patients}} 
+                            <tr>
+                                <td><span class="iconify" data-icon="gg:profile" style="color: #D7DBDE; height:70px; width:100%;"></span></td>
+
+                           
+                        
+                                <td><a href = "/clinician/{{_id}}">
+                                    
+                                    {{nameGiven}} {{nameFamily}}</a></td>
+
+
+                                {{#if (isNull historyData)}}
+
+                                <td class = "redText" > no data</td>
+                                <td class = "redText" > no data</td>
+                                <td class = "redText" > no data</td>
+                                <td class = "redText" > no data</td>
+
+
+                                {{else}}
+                                {{!--the function that verify the threshHold--}}                       
+                                    {{#with (lastElem historyData)}} 
+
+                                        {{#if (timeEQ when)}}
+
+                                        <td   
+                                        {{#if (isSafe weight ../weightMax ../weightMin)}} 
+                                            class = "greenText"
+                                        {{else}}
+                                              class = "redText"                                  
+                                        {{/if}}>
+                                        
+                                        
+                                        {{#if (isDataEntered weight)}}
+                                            {{weight}}
+                                        {{else}}
+                                            no data
+                                        {{/if}}
+                                        
+                                        </td>
+
+   
+
+                                        <td  
+                                        {{#if (isSafe bloodGlucoseLevel ../bloodGlucoseLevelMax ../bloodGlucoseLevelMin)}} 
+                                            class = "greenText"
+                                        {{else}}
+                                              class = "redText"                                  
+                                        {{/if}}>
+                                        
+                                        {{#if (isDataEntered bloodGlucoseLevel)}}
+                                            {{bloodGlucoseLevel}}
+                                        {{else}}
+                                            no data
+                                        {{/if}}
+                                        </td>
+
+                                        <td   
+                                        {{#if (isSafe exercise ../exerciseMax ../exerciseMin)}} 
+                                            class = "greenText"
+                                        {{else}}
+                                              class = "redText"                                  
+                                        {{/if}}>
+
+
+                                        {{#if (isDataEntered exercise)}}
+                                            {{exercise}}
+                                        {{else}}
+                                            no data
+                                        {{/if}}
+                                        
+                                        
+                                        
+                                        </td>
+
+
+
+                                        <td   
+                                        {{#if (isSafe doseOfInsulinTaken ../doseOfInsulinTakenMax ../doseOfInsulinTakenMin)}} 
+                                            class = "greenText"
+                                        {{else}}
+                                              class = "redText"                                  
+                                        {{/if}}>
+
+                                        {{#if (isDataEntered doseOfInsulinTaken)}}
+                                            {{doseOfInsulinTaken}}
+                                        {{else}}
+                                            no data
+                                        {{/if}}
+                                        
+                                        
+                                        </td>
+
+                                        {{else}}
+                                            <td class = "redText" > no data</td>
+                                            <td class = "redText" > no data</td>
+                                            <td class = "redText" > no data</td>
+                                            <td class = "redText" > no data</td>
+
+                                        {{/if}}
+
+                                    {{/with}}
+                                    
+
+
+                                {{/if}}
+                        
+                            </tr>
+
+                        {{/each}}
+
+                    </tbody>
+                    
+                </table>
+
+           
+            </div>
+
+            
+        </div>
+    </div>
+    
+
+<script>
+function logout() {
+  var form = document.createElement("form");
+  form.action = "/clinician/logout";
+  form.method = "post";
+  var sbmt = document.createElement("input");
+  sbmt.name = "logout-submit";
+  form.appendChild(sbmt);
+  document.body.appendChild(form);
+  form.submit();
+}
+
+
+</script>
+

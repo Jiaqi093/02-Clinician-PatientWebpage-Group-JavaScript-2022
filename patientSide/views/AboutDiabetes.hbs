@@ -1,0 +1,129 @@
+ <div class = "top_buttons">
+     {{#if loggedin}}
+        <div class = "top_buttons_sidebar">
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav();toggle();">&times;</a>
+                <a><span class="iconify" data-icon="gg:profile" style="color: black;height:35px; width:35px;"></span></a>
+                <a href="#">{{patientName}}</a>
+                <hr>
+                <a href="/patient/recordingData">Recording data</a>
+                <a href="/patient/viewData">Viewing data</a>
+                <a href="/patient/leaderboard">Leaderboard</a>
+                <hr>
+                <a href="/patient/Home">Homepage</a>
+                <a href="/patient/updatePwd">Change Password</a>
+                <a href="/patient/aboutDiabetes">About diabetes</a>
+                <a href="/patient/aboutWebsite">About this website</a>
+                <a href='#' onclick="logout()">Log Out</a>
+            </div>
+
+            <div class ="top_buttons_sidebarButton">
+                <span style="font-size:40px;cursor:pointer" onclick="openNav();toggle();">&#9776;</span>
+            </div>
+
+
+        </div>
+
+     {{/if}}
+        
+</div>
+
+ <div class = "main-content-about"> 
+     
+        {{#if loggedin}}
+
+            <div class = "login-button">
+                
+            </div>
+            
+        {{else}}
+            <div class = "login-button">
+                <div class ='Login_button-desktop'><a href="/patient/login"><input type="button"  value="Log In"/></a></div>
+            </div>
+
+        {{/if}}
+
+        
+    
+        <div class = "container-About">
+            <div class="AboutDiabetes-title">
+                <h1>About diabetes</h1>
+            </div>
+
+            <div class ="diabetes_text1" id="diabetes_text1">
+                <h3 class="info_heading">What is Diabetes</h3>
+                <p class="diabetes_info">Diabetes is a chronic (long-lasting) health condition 
+                    that affects how your body turns food into energy.</p>
+                <p class="diabetes_info">Most of the food you eat is broken down into sugar (also called glucose) 
+                    and released into your bloodstream. 
+                    When your blood sugar goes up, it signals your pancreas to release insulin. 
+                    Insulin acts like a key to let the blood sugar into your body's cells for use as energy.</p>
+                <p class="diabetes_info">If you have diabetes, your body either doesn't make enough insulin or 
+                    can't use the insulin it makes as well as it should. 
+                    When there isn't enough insulin or cells stop responding to insulin, 
+                    too much blood sugar stays in your bloodstream. Over time, that can cause serious health problems, 
+                    such as heart disease, vision loss, and kidney disease.</p>
+            </div>
+
+            <div>
+                <iframe class = "youtube" src="https://www.youtube.com/embed/wZAjVQWbMlE" 
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+            </div>
+
+            <div class="diabetes_text2" id="diabetes_text2">
+                <h3 class="info_heading">Diabetes and diet</h3>
+                <h4 class="diabetes_info_type">Type 1 diabetes</h4>
+                <p class="diabetes_info">Your blood sugar level rises or falls based on the types of foods you eat. 
+                    Starchy or sugary foods make blood sugar levels rise rapidly. Protein and fat cause more gradual increases.
+                    You may limit the amount of carbohydrates you eat each day. You'll also need to balance your carb intake with your insulin doses.
+                    Work with a dietitian who can help you design a diabetes meal plan. Getting the right balance of protein, fat, and carbs can help you control your blood sugar.</p>
+                <h4 class="diabetes_info_type">Type 2 diabetes</h4>
+                <p class="diabetes_info">Eating the right types of foods can both control your blood sugar and help you lose any excess weight.
+                    Carb counting is an important part of eating for type 2 diabetes.In order to keep your blood sugar levels steady, try to eat small meals throughout the day. 
+                    Emphasize healthy foods such as: fruits, vegetables, whole grains,lean protein such as poultry and fish.
+                </p>
+            </div>
+            <div id="useful_links" class="useful_links">
+                <h3 class="links_heading">Useful links</h3>
+                <a class="links"href="https://www.diabetesaustralia.com.au/">1 Diabetes Australia</a>
+                <br/>
+                <a class="links"href="https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/diabetes">2 Betterhealth Channel: Diabetes</a>
+                <br/>
+                <a class="links"href="https://www.who.int/news-room/fact-sheets/detail/diabetes">3 Who: diabetes</a>
+            </div>
+        </div>
+        
+
+        
+    </div>  
+
+    
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "50%";
+    }
+          
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+
+    function logout() {
+        var form = document.createElement("form");
+        form.action = "/patient/logout";
+        form.method = "post";
+        var sbmt = document.createElement("input");
+        sbmt.name = "logout-submit";
+        form.appendChild(sbmt);
+        document.body.appendChild(form);
+        form.submit();
+    }
+
+    function toggle(){
+        var blur = document.getElementById('blur')
+        blur.classList.toggle('active')
+    }
+</script>
+
+
+    

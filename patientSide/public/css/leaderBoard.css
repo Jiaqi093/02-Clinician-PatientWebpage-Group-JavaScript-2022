@@ -1,0 +1,368 @@
+
+
+.headerLeaderBoard .topnav a:hover{
+    color: aliceblue;
+    background-color: black;
+}
+
+
+.headerLeaderBoard .profilepic-size .iconify{
+    color: black;
+    height:35px; 
+    width:35px;
+}
+
+.mainContentLeaderBoard {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;   
+    margin-top: 20px;;
+}
+
+.mainContentLeaderBoard .leaderboardtitle {
+    width: 320px;
+    height: 40px;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.mainContentLeaderBoard .leaderboardtitle .leaderboardtitle-subBlock0{
+    width: 50px;
+    height: 100%;
+
+}
+
+.mainContentLeaderBoard .leaderboardtitle .leaderboardtitle-subBlock0 .trophy-icon .iconify{
+    
+    height:40px; 
+    width:40px;
+    color: #FFCE00;
+}
+
+.mainContentLeaderBoard .leaderboardtitle .leaderboardtitle-subBlock1{
+    width:230px;
+    height: 100%;
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 30px;
+    color: #0079C8;
+}
+
+
+.mainContentLeaderBoard .leaderBoard{
+
+    width: 320px;
+    
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    
+    align-items: flex-start;
+
+    row-gap: 15px;
+}
+
+.mainContentLeaderBoard .leaderBoard .leaderBoardBlock{
+    width:300px;
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+}
+
+.mainContentLeaderBoard .leaderBoard .leaderBoardBlock .leaderBoard-ProfileSubBlock{
+    width:50px;
+    height: 100%;
+    background-color: #0079C8;
+    border-radius: 4px;
+}
+
+.mainContentLeaderBoard .leaderBoard .leaderBoardBlock .leaderBoard-ProfileSubBlock .rankIcon{
+    text-align: center;
+    font-size: 40px;
+    
+}
+
+.mainContentLeaderBoard .leaderBoard .leaderBoardBlock .leaderBoard-ProfileSubBlock .rankNumber{
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 40px;
+    color:#F2F4F8;
+}
+
+.mainContentLeaderBoard .leaderBoard .leaderBoardBlock .leaderBoard-subBlock{
+    width:230px;
+    height: 100%;
+    border-radius: 4px;
+    background-color: #0079C8;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainContentLeaderBoard .leaderBoard .leaderBoardBlock .leaderBoard-subBlock .picAndName-subBlock{
+    height: 100%;
+    width: 130px;
+    column-gap: 10px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    color:#D7DBDE;
+    
+}
+
+
+
+.mainContentLeaderBoard .leaderBoard .leaderBoardBlock .leaderBoard-subBlock .picAndName-subBlock .profilepic .iconify{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#F2F4F8;
+    height: 30px;
+    width: 30px;
+
+    color:#D7DBDE;
+    
+}
+
+
+.mainContentLeaderBoard .leaderBoard .leaderBoardBlock .leaderBoard-subBlock .engagementRate-subBlock{
+    height: 100%;
+    width: 40px;    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color:#F2F4F8;
+
+}
+
+.mainContentLeaderBoard .leaderBoard .leaderBoardBlock .leaderBoard-ProfileSubBlock .rankIcon img{
+    width:45px;
+    height:45px;
+}
+
+.theBadege{
+    width: 26px;
+    height: 26px;
+}
+
+.mainContentLeaderBoard#blur.active{
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
+
+@media screen and (min-width: 376px) and (max-width:1025px){
+    .headerLeaderBoard {
+        width: 100%; 
+        height: 55px;
+    }
+
+    .headerLeaderBoard .profilepic-size .iconify{
+        height:45px; 
+        width:45px;
+    }
+
+    .mainContentLeaderBoard{
+        width: 80%;
+    }
+
+    .mainContentLeaderBoard .leaderboardtitle {
+        width:100%;
+        height: 65px;
+        column-gap: 30px;
+    }
+
+    .mainContentLeaderBoard .leaderboardtitle .leaderboardtitle-subBlock0{
+        width:10%;
+    }
+
+    .mainContentLeaderBoard .leaderboardtitle .leaderboardtitle-subBlock0 .trophy-icon .iconify{
+        height: 65px;
+        width:65px;
+    }
+
+    .mainContentLeaderBoard .leaderboardtitle .leaderboardtitle-subBlock1{
+        font-size: 40px;
+        width: 400px;
+    }
+
+    .mainContentLeaderBoard .leaderBoard{
+        width:100%;
+        row-gap: 30px;
+    }
+
+    .mainContentLeaderBoard .leaderBoard .leaderBoardBlock{
+        width:100%;
+        height:100px;
+        column-gap: 30px;
+    }
+
+    .mainContentLeaderBoard .leaderBoard .leaderBoardBlock .leaderBoard-ProfileSubBlock{
+        width:10%;
+    }
+
+    .mainContentLeaderBoard .leaderBoard .leaderBoardBlock .leaderBoard-ProfileSubBlock .rankIcon img{
+        height: 80px;
+        width: 80px;
+    }
+
+    .mainContentLeaderBoard .leaderBoard .leaderBoardBlock .leaderBoard-subBlock{
+        width:80%;
+    }
+
+    .mainContentLeaderBoard .leaderBoard .leaderBoardBlock .leaderBoard-subBlock .picAndName-subBlock{
+        width: 70%;
+        column-gap: 40px;
+        font-size: x-large;
+        color:#D7DBDE;
+        margin-left: 80px;
+        
+    }
+
+    .mainContentLeaderBoard .leaderBoard .leaderBoardBlock .leaderBoard-subBlock .picAndName-subBlock .string{
+        color:#F2F4F8;
+        font-size: 30px;
+    }
+
+
+
+    .mainContentLeaderBoard .leaderBoard .leaderBoardBlock .leaderBoard-subBlock .picAndName-subBlock .profilepic .iconify{
+        height: 60px;
+        width: 60px;
+        color:#D7DBDE;
+    }
+
+    .mainContentLeaderBoard .leaderBoard .leaderBoardBlock .leaderBoard-subBlock .engagementRate-subBlock{
+        width:30%;
+        font-size:30px;
+        margin-right: 60px;
+    }
+
+    .theBadege{
+        width: 50px;
+        height: 50px;
+    }
+    
+    
+
+}
+
+
+
+@media screen and (min-width: 1026px) {
+    .headerLeaderBoard {
+        width: 100%; 
+        height: 55px;
+    }
+
+    .headerLeaderBoard .profilepic-size .iconify{
+        height:45px; 
+        width:45px;
+    }
+
+    .mainContentLeaderBoard{
+        width: 50%;
+    }
+
+    .mainContentLeaderBoard .leaderboardtitle {
+        width:100%;
+        height: 65px;
+        column-gap: 30px;
+    }
+
+    .mainContentLeaderBoard .leaderboardtitle .leaderboardtitle-subBlock0{
+        width:10%;
+    }
+
+    .mainContentLeaderBoard .leaderboardtitle .leaderboardtitle-subBlock0 .trophy-icon .iconify{
+        height: 65px;
+        width:65px;
+    }
+
+    .mainContentLeaderBoard .leaderboardtitle .leaderboardtitle-subBlock1{
+        font-size: 40px;
+        width: 400px;
+    }
+
+    .mainContentLeaderBoard .leaderBoard{
+        width:100%;
+        row-gap: 30px;
+    }
+
+    .mainContentLeaderBoard .leaderBoard .leaderBoardBlock{
+        width:100%;
+        height:100px;
+        column-gap: 30px;
+    }
+
+    .mainContentLeaderBoard .leaderBoard .leaderBoardBlock .leaderBoard-ProfileSubBlock{
+        width:10%;
+    }
+
+    .mainContentLeaderBoard .leaderBoard .leaderBoardBlock .leaderBoard-ProfileSubBlock .rankIcon img{
+        height: 80px;
+        width: 80px;
+    }
+
+    .mainContentLeaderBoard .leaderBoard .leaderBoardBlock .leaderBoard-subBlock{
+        width:80%;
+    }
+
+    .mainContentLeaderBoard .leaderBoard .leaderBoardBlock .leaderBoard-subBlock .picAndName-subBlock{
+        width: 70%;
+        column-gap: 40px;
+        font-size: x-large;
+        color:#D7DBDE;
+        margin-left: 80px;
+        
+    }
+
+    .mainContentLeaderBoard .leaderBoard .leaderBoardBlock .leaderBoard-subBlock .picAndName-subBlock .string{
+        color:#F2F4F8;
+        font-size: 30px;
+    }
+
+
+
+    .mainContentLeaderBoard .leaderBoard .leaderBoardBlock .leaderBoard-subBlock .picAndName-subBlock .profilepic .iconify{
+        height: 60px;
+        width: 60px;
+        color:#D7DBDE;
+    }
+
+    .mainContentLeaderBoard .leaderBoard .leaderBoardBlock .leaderBoard-subBlock .engagementRate-subBlock{
+        width:30%;
+        font-size:30px;
+        margin-right: 60px;
+    }
+
+    .theBadege{
+        width: 50px;
+        height: 50px;
+    }
+    
+    
+}
+

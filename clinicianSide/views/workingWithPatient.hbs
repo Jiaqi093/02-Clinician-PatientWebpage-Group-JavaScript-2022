@@ -1,0 +1,547 @@
+    <div class="wrapper">
+
+        <div class="sidebar">
+            <div class = "logo">
+                <i class="iconify" data-icon="arcticons:diabetesm"></i>
+            </div>
+            <ul>
+                <li><a href="/clinician/home"><i class="iconify" data-icon="ant-design:dashboard-outlined"></i>Dash Board</a></li>
+                <li><a href="/clinician//comment"><i class="iconify" data-icon="ooui:message"></i>Comments</a></li>
+                <li><a href='#' onclick="logout()"><i class="iconify" data-icon="bx:log-out"></i>Log Out</a></li>
+            </ul> 
+        </div>
+
+
+        <div class="main_content">
+            <div class="header">
+                <i class="iconify" data-icon="healthicons:ui-user-profile"></i>
+                <h2>Patient Overview</h2>
+            </div>
+
+            <div class = "patientAllData">
+
+            
+
+
+            <div class = "WorkingWithPatient-row1Wrapper">
+
+                <div class = "WorkingWithPatient-PatientPIC">
+                    <span class="iconify" data-icon="gg:profile" style="color: #D7DBDE; height: 120px; width:120px;"></span>
+                    <div class = "WorkingWithPatient-PatientFirstName">
+
+                        {{#with patientINFO}} 
+                            {{nameGiven}} {{nameFamily}}
+                        {{/with}}
+                
+
+                        <div class = "workingWithPatientViewData"><a href="/clinician/{{#with patientINFO}}{{_id}}{{/with}}/viewData"
+                        >view all data</a></div>                 
+                    </div>
+                </div>
+
+                
+
+                <div class = "WorkingWithPatient-LatestPatientData">
+
+                    <div class="WorkingWithPatient-LatestPatientData-Block">
+
+            
+                       <img src="/images/Component 29.png" alt="weight" style="width:90px;height:90px;">
+
+                        <div class="WorkingWithPatient-LatestPatientData-subBlock">
+                            <div class="string">Weight</div>
+                            <div class="number">
+
+                                {{#with patientINFO}}
+
+                                    {{#if (isNull historyData)}}
+                                        no data
+                                    {{else}}
+                                        {{#with (lastElem historyData)}}
+                                            {{#if (timeEQ when)}}
+
+                                                {{#if (isDataEntered weight) }}
+                                                    {{weight}}
+                                                {{else}}
+                                                    no data
+                                                {{/if}}
+                                                
+
+                                            {{else}}
+                                                no data   
+                                            {{/if}}
+                                        {{/with}}
+                                    {{/if}}
+                   
+                                {{/with}}
+                            
+
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="WorkingWithPatient-LatestPatientData-Block">
+
+                        <img src="/images/Component28.png" alt="exercisehuman" style="width:90px;height:90px;">
+                        
+                        
+
+                        <div class="WorkingWithPatient-LatestPatientData-subBlock">
+                            <div class="string">Exercise</div>
+                            <div class="number">
+
+                                {{#with patientINFO}}
+
+                                    {{#if (isNull historyData)}}
+                                        no data
+                                    {{else}}
+                                        {{#with (lastElem historyData)}}
+                                            {{#if (timeEQ when)}}
+
+                                                {{#if (isDataEntered exercise)}}
+                                                    {{exercise}}
+                                                {{else}}
+                                                    no data
+                                                {{/if}}
+                                                
+
+                                            {{else}}
+                                                no data   
+                                            {{/if}}
+                                        {{/with}}
+                                    {{/if}}
+                   
+                                {{/with}}
+                            
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="WorkingWithPatient-LatestPatientData-Block">
+
+                        <img src="/images/Component 30.png" alt="bloodtest" style="width:90px;height:90px;">
+                        <div class="WorkingWithPatient-LatestPatientData-subBlock">
+                            <div class="string">Blood Glucose Level</div>
+                            <div class="number">
+                                {{#with patientINFO}}
+
+                                    {{#if (isNull historyData)}}
+                                        no data
+                                    {{else}}
+                                        {{#with (lastElem historyData)}}
+                                            {{#if (timeEQ when)}}
+
+                                                {{#if (isDataEntered bloodGlucoseLevel)}}
+                                                    {{bloodGlucoseLevel}}
+                                                {{else}}
+                                                    no data
+                                                {{/if}}
+                                                
+
+                                            {{else}}
+                                                no data   
+                                            {{/if}}
+                                        {{/with}}
+                                    {{/if}}
+                   
+                                {{/with}}
+
+
+
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="WorkingWithPatient-LatestPatientData-Block">
+
+                        <img src="/images/component31.png" alt="insulin needle" style="width:90px;height:90px;">
+                        <div class="WorkingWithPatient-LatestPatientData-subBlock">
+                            <div class="string">Dose of Insulin</div>
+                            <div class="number">
+                                {{#with patientINFO}}
+
+                                    {{#if (isNull historyData)}}
+                                        no data
+                                    {{else}}
+                                        {{#with (lastElem historyData)}}
+                                            {{#if (timeEQ when)}}
+
+                                                {{#if (isDataEntered doseOfInsulinTaken)}}
+                                                    {{doseOfInsulinTaken}}
+                                                {{else}}
+                                                    no data
+                                                {{/if}}
+                                                
+
+                                            {{else}}
+                                                no data   
+                                            {{/if}}
+                                        {{/with}}
+                                    {{/if}}
+                   
+                                {{/with}}
+                                
+                                
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+            </div>
+
+
+            
+
+            <div class = "WorkingWithPatient-row2Wrapper">
+
+                {{#with patientINFO}}
+                <form method="post" action= "/clinician/{{_id}}">
+                {{/with}}
+                
+                
+
+                <div class="WorkingWithPatient-row2Wrapper-Block">
+
+                    <div class="row2 string">Blood Glucose  Level (nmol/L)</div>
+
+                    <div class = "WorkingWithPatient-row2Wrapper-subBlock" >
+                        {{#with patientINFO}}
+                        <div class="labelAboveInput">
+                            <label for="Min">Min</label>
+                            <input step=".01" type="number" name="BGLMin" id="Min" min = "0" value="{{bloodGlucoseLevelMin}}"/>
+                        </div>
+                        
+                        <div class="labelAboveInput">
+                            <label for="Max">Max</label>
+                            <input step=".01" type="number" name="BGLMax" id="Max" max = "20" value="{{bloodGlucoseLevelMax}}" />
+                        </div>
+                        {{/with}}
+
+                    
+                    </div>
+                    
+                    <div class = "row2button">
+                        <button>Apply</button>
+                    </div>
+                    
+
+                </div>
+
+                </form>
+
+
+                <div class="WorkingWithPatient-row2Wrapper-Block">
+
+                    {{#with patientINFO}}
+                    <form method="post" action= "/clinician/{{_id}}">
+                    {{/with}}
+                    <div class="row2 string">Weight (KG)</div>
+
+                    <div class = "WorkingWithPatient-row2Wrapper-subBlock" >
+                        {{#with patientINFO}}
+                        <div class="labelAboveInput">
+                            <label for="Min">Min</label>
+                            <input step=".01" type="number" name="WeightMin" id="Min1" min = "0" value="{{weightMin}}"/>
+                        </div>
+                        
+                        <div class="labelAboveInput">
+                            <label for="Max">Max</label>
+                            <input step=".01" type="number" name="WeightMax" id="Max1" max = "500" value="{{weightMax}}" />
+                        </div>
+                        {{/with}}
+
+                    </div>
+
+                    <div class = "row2button">
+
+                        <button>Apply</button>
+                    </div>
+                    </form>
+                    
+                    
+                    
+                </div>
+
+                
+
+                <div class="WorkingWithPatient-row2Wrapper-Block">
+
+                    {{#with patientINFO}}
+                    <form method="post" action= "/clinician/{{_id}}">
+                    {{/with}}
+
+                    <div class="row2 string">Excercise(Step)</div>
+                    
+                    <div class = "WorkingWithPatient-row2Wrapper-subBlock" >
+                        {{#with patientINFO}}
+                        <div class="labelAboveInput">
+                            <label for="Min">Min</label>
+                            <input step=".01" type="number" name="ExerMin" id="Min2" min = "0" value="{{exerciseMin}}"/>
+                        </div>
+                        
+                        <div class="labelAboveInput">
+                            <label for="Max">Max</label>
+                            <input step=".01" type="number" name="ExerMax" id="Max2" max = "100000" value="{{exerciseMax}}"/>
+                        </div>
+                        {{/with}}
+
+                    </div>
+
+                    <div class = "row2button">
+                        <button>Apply</button>
+                    </div>
+                    </form>
+                    
+                    
+                </div>
+
+                <div class="WorkingWithPatient-row2Wrapper-Block">
+
+                    {{#with patientINFO}}
+                    <form method="post" action= "/clinician/{{_id}}">
+                    {{/with}}
+                    <div class="row2 string">Dose of Insulin (Dose)</div>
+
+                    <div class = "WorkingWithPatient-row2Wrapper-subBlock" >
+                        {{#with patientINFO}}
+                        <div class="labelAboveInput">
+                            <label for="Min">Min</label>
+                            <input step=".01" type="number" name="MinDOI" id="Min3" min = "0" value="{{doseOfInsulinTakenMin}}"/>
+                        </div>
+                        
+                        <div class="labelAboveInput">
+                            <label for="Max">Max</label>
+                            <input step=".01" type="number" name="MaxDOI" id="Max3" max = '10' value="{{doseOfInsulinTakenMax}}"/>
+                        </div>
+                        {{/with}}
+
+                    </div>
+
+                    <div class = "row2button">
+                        <button>Apply</button>
+                    </div>
+                    </form>
+                    
+                    
+                </div>
+
+        
+            </div>
+
+            <div class = "WorkingWithPatient-row3Wrapper">
+
+                
+
+                <div class="WorkingWithPatient-row3Wrapper-Block">
+                    
+                    <div class="clinicalNotes">Clinical Notes</div>
+                    
+                    <div class ="row3textarea">
+                        {{#with patientINFO}}
+                        <form method="post" action= "/clinician/{{_id}}">
+                       
+                        <textarea name = 'clinicalNote'>{{clinicianNote}}</textarea>
+                        {{/with}}
+
+                        <div class = "row3button">
+                            <button>Send</button>     
+                        </div>
+
+
+                        </form>
+                    </div>
+                    
+
+                  
+
+                </div>
+
+                <div class="WorkingWithPatient-row3Wrapper-Block">
+
+                    
+                    <div class="suptMesg">Support Message</div>
+                    
+                    <div class ="row3textarea2">
+                        {{#with patientINFO}}
+                        <form method="post" action= "/clinician/{{_id}}">
+                        
+                        <textarea name = 'supportMSG' id="myTextArea" >{{supprtMSG}}</textarea>
+                        {{/with}}
+
+                
+
+                        <div class = "row3button">
+                            <button>Send</button>     
+                        </div>
+
+
+                        </form>
+                        
+                    
+                    </div>
+                    
+                    
+
+                </div>
+
+                <div class="WorkingWithPatient-row3Wrapper-Blocklarger">
+
+                    <h1>Required Patient Data</h1>
+
+                    {{#with patientINFO}}
+
+                    <form method="post" action= "/clinician/{{_id}}/newTimeSeries" class = "timeSeriesRequirementClass">
+                        
+                    {{/with}}
+             
+
+                    <div class = "time-series-selector">
+
+                        {{#with patientINFO}}
+
+                        <label class="container">Blood Glucose Level
+                        <input type="checkbox" id = "BGLCheckBox" name="BGLCheckBox"
+                        
+                        {{#if bloodGlucoseRequired}}
+                         checked
+                        {{/if}}
+                        >
+                        <span class="checkmark"></span>
+                        </label>
+
+
+                        <label class="container">Dose of Insulin Taken
+                        <input type="checkbox" id = "DOICheckBox" name="DOICheckBox"
+
+                        {{#if doseOfInsulinTakenRequired}}
+                         checked
+                        {{/if}}
+                        >
+
+                        <span class="checkmark"></span>
+                        </label>
+
+
+                        <label class="container">Exercise
+                        <input type="checkbox" id = "exerciseCheckBox" name="exerciseCheckBox"
+
+                        {{#if exerciseRequired}}
+                         checked
+                        {{/if}}
+                        >
+                        
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="container">Weight
+                        <input type="checkbox" id = "weightCheckBox" name="weightCheckBox"
+
+                        {{#if weightRequired}}
+                         checked
+                        {{/if}}
+                        >
+                        
+                        <span class="checkmark"></span>
+                        </label>
+
+                        {{/with}}
+
+                    
+                    </div>
+        
+                    <button type="submit" value="Submit" class = "timeseries-submit">Submit</button>
+
+                    </form>
+
+                    </div>
+
+        
+                    
+                    
+                </div>
+
+            </div>
+
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+<script>
+
+//below script for checking the minnunm value of threshold
+var quantity_gates = document.getElementById('Min');
+var quantity_spots = document.getElementById('Max');
+
+var quantity_gates1 = document.getElementById('Min1');
+var quantity_spots1 = document.getElementById('Max1');
+
+var quantity_gates2 = document.getElementById('Min2');
+var quantity_spots2 = document.getElementById('Max2');
+
+var quantity_gates3 = document.getElementById('Min3');
+var quantity_spots3 = document.getElementById('Max3');
+
+//for BGL
+quantity_gates.addEventListener('input', function() {
+  quantity_spots.min = this.value;
+  quantity_spots.value = Math.max(this.value, +quantity_spots.value || 1);
+});
+
+quantity_spots.addEventListener('change', function() {
+  this.value = Math.max(+this.value, +this.min);
+});
+
+
+//for weight
+quantity_gates1.addEventListener('input', function() {
+  quantity_spots1.min = this.value;
+  quantity_spots1.value = Math.max(this.value, +quantity_spots1.value || 1);
+});
+
+quantity_spots1.addEventListener('change', function() {
+  this.value = Math.max(+this.value, +this.min);
+});
+
+//for exerxcise
+quantity_gates2.addEventListener('input', function() {
+  quantity_spots2.min = this.value;
+  quantity_spots2.value = Math.max(this.value, +quantity_spots2.value || 1);
+});
+
+quantity_spots2.addEventListener('change', function() {
+  this.value = Math.max(+this.value, +this.min);
+});
+
+//for dose of insulin
+quantity_gates3.addEventListener('input', function() {
+  quantity_spots3.min = this.value;
+  quantity_spots3.value = Math.max(this.value, +quantity_spots3.value || 1);
+});
+
+quantity_spots3.addEventListener('change', function() {
+  this.value = Math.max(+this.value, +this.min);
+});
+
+function logout() {
+  var form = document.createElement("form");
+  form.action = "/clinician/logout";
+  form.method = "post";
+  var sbmt = document.createElement("input");
+  sbmt.name = "logout-submit";
+  form.appendChild(sbmt);
+  document.body.appendChild(form);
+  form.submit();
+}
+
+</script>
+
+

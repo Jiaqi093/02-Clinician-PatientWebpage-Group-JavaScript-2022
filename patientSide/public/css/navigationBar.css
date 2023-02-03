@@ -1,0 +1,295 @@
+/*
+ * Made by Erik Terwan
+ * 24th of November 2015
+ * MIT License
+ *
+ *
+ * If you are thinking of using this in
+ * production code, beware of the browser
+ * prefixes.
+ */
+
+ #menuToggle
+ {
+   display: block;
+   position: relative;
+   top: 50px;
+   left: 50px;
+   
+   z-index: 1;
+   
+   -webkit-user-select: none;
+   user-select: none;
+ }
+ 
+ #menuToggle a
+ {
+   text-decoration: none;
+   color: #F2F4F8;
+   
+   transition: color 0.3s ease;
+ }
+ 
+ #menuToggle a:hover
+ {
+   color: tomato;
+ }
+ 
+ 
+ #menuToggle input
+ {
+   display: block;
+   width: 40px;
+   height: 32px;
+   position: absolute;
+   top: -7px;
+   left: -5px;
+   
+   cursor: pointer;
+   
+   opacity: 0; /* hide this */
+   z-index: 2; /* and place it over the hamburger */
+   
+   -webkit-touch-callout: none;
+ }
+ 
+ /*
+  * Just a quick hamburger
+  */
+ #menuToggle span
+ {
+   display: block;
+   width: 33px;
+   height: 4px;
+   margin-bottom: 5px;
+   position: relative;
+   
+   background: #cdcdcd;
+   border-radius: 3px;
+   
+   z-index: 2;
+   
+   transform-origin: 4px 0px;
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease;
+ }
+ 
+ #menuToggle span:first-child
+ {
+   transform-origin: 0% 0%;
+ }
+ 
+ #menuToggle span:nth-last-child(2)
+ {
+   transform-origin: 0% 100%;
+ }
+ 
+ /* 
+  * Transform all the slices of hamburger
+  * into a crossmark.
+  */
+ #menuToggle input:checked ~ span
+ {
+   opacity: 1;
+   transform: rotate(45deg) translate(-2px, -1px);
+   background: #232323;
+ }
+ 
+ /*
+  * But let's hide the middle one.
+  */
+ #menuToggle input:checked ~ span:nth-last-child(3)
+ {
+   opacity: 0;
+   transform: rotate(0deg) scale(0.2, 0.2);
+ }
+ 
+ /*
+  * Ohyeah and the last one should go the other direction
+  */
+ #menuToggle input:checked ~ span:nth-last-child(2)
+ {
+   transform: rotate(-45deg) translate(0, -1px);
+ }
+ 
+ /*
+  * Make this absolute positioned
+  * at the top left of the screen
+  */
+ #menu
+ {
+   position: absolute;
+   width: 30%;
+   height: 1000px;
+   margin: -100px 0 0 -57px;
+   padding: 50px;
+   padding-top: 125px;
+   
+   background: #0079C8;
+   list-style-type: none;
+   -webkit-font-smoothing: antialiased;
+   /* to stop flickering of text in safari */
+   
+   transform-origin: 0% 0%;
+   transform: translate(-100%, 0);
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+ }
+ 
+ #menu li
+ {
+   padding: 10px 0;
+   font-size: 22px;
+ }
+ 
+ /*
+  * And let's slide it in from the left
+  */
+ #menuToggle input:checked ~ ul
+ {
+   transform: none;
+ }
+
+
+/*End for the expandable hamburguer*/
+
+
+/*Below is the content and the position of the hamburger, not animation*/
+ .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: #007FD4;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align: center;
+
+  
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: tomato;
+}
+
+
+
+/*all buttons within the navigation bar*/
+.top_buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    align-items: center;
+    height: 40px;
+    width:350px;
+}
+
+.top_buttons_sidebar{
+  display: flex;
+  justify-content: center;
+}
+
+.top_buttons_sidebarButton span{
+  margin-left: 15px;
+ 
+  color: #232323;
+  display: flex;
+  justify-content: center;
+}
+
+.top_buttons .top-profile-pic{
+  margin-right:15px;
+  display: flex;
+  justify-content: center;
+}
+
+.top_buttons .top-profile-pic .iconify{
+  color: #232323;
+}
+
+@media screen and (min-width: 376px) and (max-width:1025px){
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+
+  /*change the thickness of the top navigation bar*/
+  .top_buttons {
+    background-color: #0079C8;
+
+    width: 100%; 
+    height: 55px;
+  }
+
+  .top_buttons_sidebarButton{
+    margin-left: 25px;
+    color: #F2F4F8;
+  }
+
+  .top_buttons_sidebarButton span{
+    color: #F2F4F8;
+  }
+
+  .top_buttons .top-profile-pic .iconify{
+    margin-right:25px;
+    width: 45px;
+    height:45px;
+    color: #F2F4F8;
+  }
+}
+
+/*responsive design for the top navigation bar, when width of the page exceed 376px*/
+@media screen and (min-width: 1026px) {
+  /*change the thickness of the top navigation bar*/
+  .top_buttons {
+    background-color: #0079C8;
+
+    width: 100%; 
+    height: 55px;
+  }
+
+  .top_buttons_sidebarButton{
+    margin-left: 25px;
+    color: #F2F4F8;
+  }
+
+  .top_buttons_sidebarButton span{
+    color: #F2F4F8;
+  }
+
+  .top_buttons .top-profile-pic .iconify{
+    margin-right:25px;
+    width: 45px;
+    height:45px;
+    color: #F2F4F8;
+  }
+
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+  
+}

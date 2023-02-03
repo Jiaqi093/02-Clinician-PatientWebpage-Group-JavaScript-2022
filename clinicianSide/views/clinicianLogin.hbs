@@ -1,0 +1,40 @@
+
+
+    <div class="web-icon">
+        <i class="iconify" data-icon="arcticons:diabetesm" style="color: #0079C8; height:200px;width:200px"></i>
+    </div>
+
+    <div class="slogan">
+        <h1 style="color:#0079C8;">
+            For a better tomorrow
+        </h1>
+    </div>
+
+
+
+    <div class="login-page">
+
+        <form class="form" action="/clinician/login" method="POST">
+            
+            <label for="username" class = "loginInputLabel">Email</label>
+            <input type="text" name="email" placeholder="Enter your email" required/>
+            
+            <label for="password" class = "loginInputLabel">Password</label>
+            <input type="password" name="password" placeholder="Enter your password" required/>
+
+            <div class = "loginPrompt">
+                {{#if loginMessage}} <p style = "text-align:center; color:#FF0000" > {{loginMessage}} </p> {{/if}}
+            </div>
+
+            
+            
+            <div class = "loginSubmitButton"><button type="submit">Submit</button></div>
+
+            <!--<p class="message">Not registered? <a href="#">Create an account</a></p>-->
+            <div class="link-pwd">
+                <a href="#"> About website</a>
+                <a href="#"> About Diabetes</a>
+              </div>
+        
+        </form>
+      </div>

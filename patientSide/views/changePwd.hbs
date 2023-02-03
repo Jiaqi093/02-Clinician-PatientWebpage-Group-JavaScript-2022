@@ -1,0 +1,109 @@
+<div class = "top_buttons">
+        <div class = "top_buttons_sidebar">
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav();toggle();">&times;</a>
+                <a><span class="iconify" data-icon="gg:profile" style="color: black;height:35px; width:35px;"></span></a>
+                <a href="#">{{patientName}}</a>
+                <hr>
+                <a href="/patient/recordingData">Recording data</a>
+                <a href="/patient/viewData">Viewing data</a>
+                <a href="/patient/leaderboard">Leaderboard</a>
+                <hr>
+                <a href="/patient/Home">Homepage</a>
+                <a href="/patient/aboutDiabetes">About diabetes</a>
+                <a href="/patient/aboutWebsite">About this website</a>
+                <a href="/patient/updatePwd">Change Password</a>
+                <a href='#' onclick="logout()">Log Out</a>
+            </div>
+
+            <div class ="top_buttons_sidebarButton">
+                <span style="font-size:40px;cursor:pointer" onclick="openNav();toggle();">&#9776;</span>
+
+            </div>
+
+      
+        </div>
+        
+        <div class = "top-profile-pic">
+            <span class="iconify" data-icon="gg:profile" style=";height:35px; width:35px;"></span>
+        </div>
+</div>
+
+<div class="passwordChange-page" id="blur">
+
+  <form
+    id="pwdForm"
+    class="formPWD"
+    action="/patient/updatePwd"
+    method="POST"
+  >
+
+    <p style="font-size: 30px">Change Password</p>
+
+    <label> Current Password </label>
+    <input
+      type="password"
+      name="oldPwd"
+      placeholder="Enter current password"
+      required
+    />
+
+    <label> New Password </label>
+    <input
+      type="password"
+      name="newPwd"
+      placeholder="Enter new password"
+      required
+    />
+
+    <label> Confirm Password </label>
+    <input
+      type="password"
+      name="confirm"
+      placeholder="Confirm new password"
+      required
+    />
+
+    <div class="changePWDPrompt">
+      {{#if message}}<p style="text-align:center; color:#FF0000">
+          {{message}}</p>{{/if}}
+    </div>
+
+    <div class="pwdSubmitButton"><button
+        type="submit"
+        form="pwdForm"
+      >Change</button></div>
+
+    <div class="backbutton"><a href="/patient/home"> baack to home </a></div>
+
+  </form>
+
+</div>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "50%";
+    }
+          
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+
+    function logout() {
+        var form = document.createElement("form");
+        form.action = "/patient/logout";
+        form.method = "post";
+        var sbmt = document.createElement("input");
+        sbmt.name = "logout-submit";
+        form.appendChild(sbmt);
+        document.body.appendChild(form);
+        form.submit();
+    }
+
+    function toggle(){
+        var blur = document.getElementById('blur')
+        blur.classList.toggle('active')
+    }
+</script>
+
+

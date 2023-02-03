@@ -1,0 +1,26 @@
+.page404{
+    height:100%;
+    width:100%;
+
+    color:white;
+}
+
+
+@media screen and (min-width: 376px){
+    .page404{
+        height:150px;
+        width:100%;
+        background-image: url('/images/christoffer-engstrom-wc9avd2RaN0-unsplash.jpg');
+        background-size: 2500px;
+        margin-top: 420px;
+        
+    }
+    .page404 h1, .page404 a{
+    
+        color: black;
+        font-family: 'SF Pro';
+        font-style:normal;
+        font-weight: 270;
+    
+    }
+}

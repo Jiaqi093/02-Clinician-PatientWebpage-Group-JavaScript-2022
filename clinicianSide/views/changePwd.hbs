@@ -1,0 +1,54 @@
+
+
+
+
+<div class="passwordChange-page">
+
+  <form
+    id="pwdForm"
+    class="formPWD"
+    action="/clinician/updatePwd"
+    method="POST"
+  >
+
+    <p style="font-size: 30px">Change Password</p>
+
+    <label> Current Password </label>
+    <input
+      type="password"
+      name="oldPwd"
+      placeholder="Enter current password"
+      required
+    />
+
+    <label> New Password </label>
+    <input
+      type="password"
+      name="newPwd"
+      placeholder="Enter new password"
+      required
+    />
+
+    <label> Confirm Password </label>
+    <input
+      type="password"
+      name="confirm"
+      placeholder="Confirm new password"
+      required
+    />
+
+    <div class="changePWDPrompt">
+      {{#if message}}<p style="text-align:center; color:#FF0000">
+          {{message}}</p>{{/if}}
+    </div>
+
+    <div class="pwdSubmitButton"><button
+        type="submit"
+        form="pwdForm"
+      >Change</button></div>
+
+    <div class="backbutton"><a href="/clinician/home"> Back </a></div>
+
+  </form>
+
+</div>
