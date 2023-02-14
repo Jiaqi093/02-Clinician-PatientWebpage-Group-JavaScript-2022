@@ -9,4 +9,4 @@ encourage patients, otherwise clinician can give suggestions to their patients o
 # figma link: 
 https://www.figma.com/file/XW6kg2G8ZAVPtKzzEr1T2I/Patient-%26-Clinician-UI?node-id=0%3A1&t=utBpELGWnJFOiRcO-0
 # Notice
-MongoDB is probably not working due to the expiring of the free trial.
+MongoDB is probably not working due to the expiring of the free trial!
